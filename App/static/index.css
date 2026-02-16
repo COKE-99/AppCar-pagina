@@ -1,87 +1,144 @@
-.hero-landing {
-    min-height: 85vh;
+/* ============================= */
+/* LANDING TERRAMAR PREMIUM */
+/* ============================= */
+
+.landing {
+    position: relative;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 50px;
+    justify-content: center;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
+    overflow: hidden;
     border-radius: 20px;
 }
 
-/* Lado izquierdo */
-.hero-left {
+/* Efecto blur flotante */
+.landing-overlay {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+    top: -100px;
+    left: -100px;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(20px); }
+    100% { transform: translateY(0px); }
+}
+
+.landing-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 85%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* IZQUIERDA */
+.landing-info {
     flex: 1;
 }
 
-.hero-left h1 {
-    font-size: 3.5rem;
+.logo {
+    font-size: 3.2rem;
     margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.hero-left p {
+.subtitle {
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 400px;
     opacity: 0.9;
 }
 
-.btn-cliente {
-    display: inline-block;
-    padding: 12px 25px;
+.btn-primary {
+    padding: 12px 28px;
     background: #ff7b00;
     color: white;
-    text-decoration: none;
     border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
     transition: 0.3s ease;
 }
 
-.btn-cliente:hover {
+.btn-primary:hover {
     background: #ff9500;
     transform: scale(1.05);
 }
 
-/* Lado derecho */
-.hero-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
+/* LOGIN CARD */
 .login-card {
-    background: white;
-    color: #203a43;
+    flex: 1;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
     padding: 30px;
-    border-radius: 15px;
-    width: 320px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease;
 }
 
 .login-card h2 {
-    text-align: center;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.login-card input {
-    width: 100%;
-    padding: 10px;
+.input-group {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    padding: 8px 10px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
 }
 
-.login-card button {
+.input-group span {
+    margin-right: 8px;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.btn-login {
     width: 100%;
     padding: 10px;
+    border: none;
+    border-radius: 10px;
     background: #203a43;
     color: white;
-    border: none;
-    border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.login-card button:hover {
+.btn-login:hover {
     background: #2c5364;
+    transform: scale(1.02);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

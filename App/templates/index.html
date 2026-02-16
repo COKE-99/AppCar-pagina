@@ -2,30 +2,49 @@
 
 {% block contenido %}
 
-<section class="hero-landing">
+<section class="landing">
 
-    <div class="hero-left">
-        <h1>Terramar</h1>
-        <p>
-            Plataforma inteligente para gestión de inventario,
-            compras y ventas.
-        </p>
+    <div class="landing-overlay"></div>
 
-        <a href="{{ url_for('cliente') }}" class="btn-cliente">
-            Ver Catálogo
-        </a>
-    </div>
+    <div class="landing-container">
 
-    <div class="hero-right">
+        <!-- LADO IZQUIERDO -->
+        <div class="landing-info">
+            <h1 class="logo">
+                🌊 Terramar
+            </h1>
+
+            <p class="subtitle">
+                Plataforma inteligente para gestión de inventario,
+                compras y ventas.
+            </p>
+
+            <a href="{{ url_for('cliente') }}" class="btn-primary">
+                🛍 Ver Catálogo
+            </a>
+        </div>
+
+        <!-- LADO DERECHO LOGIN -->
         <div class="login-card">
-            <h2>Acceso Empresaria</h2>
+            <h2>👩‍💼 Acceso Empresaria</h2>
 
             <form action="{{ url_for('login') }}" method="POST">
-                <input name="usuario" placeholder="Usuario" required>
-                <input name="password" type="password" placeholder="Contraseña" required>
-                <button type="submit">Ingresar</button>
+                <div class="input-group">
+                    <span>👤</span>
+                    <input name="usuario" placeholder="Usuario" required>
+                </div>
+
+                <div class="input-group">
+                    <span>🔒</span>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    Ingresar
+                </button>
             </form>
         </div>
+
     </div>
 
 </section>
