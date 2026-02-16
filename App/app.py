@@ -10,6 +10,7 @@ import os
 from werkzeug.utils import secure_filename
 from database import get_connection
 from flask import Flask, render_template, request
+from flask import session, redirect, url_for
 
 app = Flask(__name__)
 
@@ -19,6 +20,28 @@ app = Flask(__name__)
 def inicio():
     """Renderiza la página de inicio."""
     return render_template("index.html")
+
+
+
+app.secret_key = "clave_super_segura"
+
+@app.route("/login", methods=["POST"])
+def login():
+    """Gestion de ususarios"""
+    usuario = request.form["usuario"]
+    password = request.form["password"]
+
+    if usuario == "admin" and password == "1234":
+        session["rol"] = "admin"
+        return redirect(url_for("dashboard"))
+
+    return redirect(url_for("inicio"))
+
+@app.route("/cliente")
+def cliente():
+    """Usuario como cliente"""
+    session["rol"] = "cliente"
+    return redirect(url_for("catalogo"))
 
 
 # 🔹 Ruta catálogo

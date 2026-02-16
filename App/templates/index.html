@@ -1,6 +1,33 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-    <h2>Bienvenido a Terramar</h2>
-    <p>Explora nuestros productos en el catálogo.</p>
+
+<section class="hero-landing">
+
+    <div class="hero-left">
+        <h1>Terramar</h1>
+        <p>
+            Plataforma inteligente para gestión de inventario,
+            compras y ventas.
+        </p>
+
+        <a href="{{ url_for('cliente') }}" class="btn-cliente">
+            Ver Catálogo
+        </a>
+    </div>
+
+    <div class="hero-right">
+        <div class="login-card">
+            <h2>Acceso Empresaria</h2>
+
+            <form action="{{ url_for('login') }}" method="POST">
+                <input name="usuario" placeholder="Usuario" required>
+                <input name="password" type="password" placeholder="Contraseña" required>
+                <button type="submit">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
 {% endblock %}

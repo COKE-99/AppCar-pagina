@@ -1,0 +1,87 @@
+.hero-landing {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    border-radius: 20px;
+}
+
+/* Lado izquierdo */
+.hero-left {
+    flex: 1;
+}
+
+.hero-left h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-left p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 400px;
+    opacity: 0.9;
+}
+
+.btn-cliente {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #ff7b00;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-cliente:hover {
+    background: #ff9500;
+    transform: scale(1.05);
+}
+
+/* Lado derecho */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    background: white;
+    color: #203a43;
+    padding: 30px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 10px;
+    background: #203a43;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-card button:hover {
+    background: #2c5364;
+}
