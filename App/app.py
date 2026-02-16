@@ -35,7 +35,7 @@ def login():
         session["rol"] = "admin"
         return redirect(url_for("dashboard"))
 
-    return redirect(url_for("inicio"))
+    return redirect(url_for("index.html"))
 
 @app.route("/cliente")
 def cliente():
