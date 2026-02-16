@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='stock.css') }}">
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Inventario Actual</h2>
+
+<div class="resumen-stock">
+    Total Productos Activos: {{ productos|length }}
+</div>
+
+<div class="grid-stock">
+    {% for p in productos %}
+    <div class="card-stock">
+
+        <h3>{{ p.nombre }}</h3>
+
+        <div class="datos-stock">
+            <span>Comprados: {{ p.comprado }}</span>
+            <span>Vendidos: {{ p.vendido }}</span>
+        </div>
+
+        <div class="stock-actual">
+            En Stock: {{ p.stock}}
+        </div>
+
+        {% if p.stock <= 2 %}
+        <div class="alerta">
+            ⚠ Bajo inventario
+        </div>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

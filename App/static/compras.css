@@ -1,0 +1,139 @@
+/* ===== FONDO GENERAL ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #e0f7fa, #f8f9fa);
+}
+
+/* ===== TITULOS ===== */
+h2 {
+    font-weight: 600;
+    color: #0f3057;
+    margin-bottom: 15px;
+}
+
+/* ===== FORMULARIO ===== */
+.form-compra {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.form-compra input {
+    flex: 1 1 200px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    transition: 0.3s;
+}
+
+.form-compra input:focus {
+    border-color: #00bcd4;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,188,212,0.2);
+}
+
+.form-compra button {
+    background: linear-gradient(45deg, #00bcd4, #0097a7);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.form-compra button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* ===== GRID DE COMPRAS ===== */
+.grid-compras {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* ===== CARD COMPRA ===== */
+.card-compra {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card-compra:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-compra h3 {
+    margin: 0;
+    color: #0f3057;
+}
+
+.card-compra p {
+    color: #555;
+    font-size: 14px;
+}
+
+.precios {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.margen {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #0097a7;
+}
+
+.fecha {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #777;
+}
+
+/* Barra decorativa */
+.card-compra::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #00bcd4, #0097a7);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-compra {
+        flex-direction: column;
+    }
+}
+.form-compra select {
+    flex: 1 1 200px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    transition: 0.3s;
+}
+
+.form-compra select:focus {
+    border-color: #00bcd4;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,188,212,0.2);
+}
+
+

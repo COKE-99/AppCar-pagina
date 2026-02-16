@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>"Terramar.Elisabth"</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Base.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+{% block extra_css %}{% endblock %}
+
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Terramar la belleza del mañana</div>
+
+    <nav>
+        <a href="/"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="/catalogo"><i class="fa-solid fa-store"></i> Catálogo</a>
+        <a href="/ventas"><i class="fa-solid fa-cash-register"></i> Ventas</a>
+        <a href="/compras"><i class="fa-solid fa-cart-shopping"></i> Compras</a>
+        <a href="/stock"><i class="fa-solid fa-box"></i> Stock</a>
+        <a href="/dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+    </nav>
+</header>
+
+<main class="contenido">
+    <h1>Terramar del mañana</h1>
+    {% block contenido %}{% endblock %}
+</main>
+
+</body>
+</html>

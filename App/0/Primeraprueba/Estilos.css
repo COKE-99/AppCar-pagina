@@ -1,0 +1,126 @@
+#encabezado {
+    background-color: #ecf1f6;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5d7287;
+    margin: auto;
+    fill:rgb(140, 201, 215);
+}
+#navegacion {
+    background-color: #d9e7f5;
+    overflow: hidden;
+}
+/* ===== LAYOUT GENERAL ===== */
+.layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+#navegacion {
+    background: #ffffff;
+    border-right: 1px solid #eee;
+    padding: 20px 10px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+/* ===== CONTENIDO ===== */
+#contenido {
+    background: #fdf6f9;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+
+/* ===== NAV CONTENEDOR ===== */
+#navegacion {
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.menu-slide {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BOTÓN SLIDE ===== */
+.btn-slide {
+    position: relative;
+    display:inline-block;
+    width: 170px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50px;
+    background: #f2f5fd;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Círculo animado */
+.btn-slide .circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: #5c8be2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #89b2d6;
+    border-radius: 50%;
+    transition: 0.4s ease;
+}
+
+/* Texto */
+.btn-slide .title {
+    position: absolute;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7080bc;
+    font-weight: 600;
+    transition: 0.4s ease;
+}
+
+.btn-slide .title-hover {
+    opacity: 0;
+}
+
+/* Hover */
+.btn-slide:hover .circle {
+    width: 100%;
+    border-radius: 50px;
+}
+
+.btn-slide:hover .title {
+    opacity: 0;
+}
+
+.btn-slide:hover .title-hover {
+    opacity: 1;
+    color: #d7dded;
+}
+
+/* Ícono */
+.btn-slide i {
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .menu-slide {
+        flex-wrap: wrap;
+    }
+}

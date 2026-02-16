@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Dashboard Empresarial</h2>
+
+<div class="grid-kpis">
+
+    <div class="card-kpi">
+        <h3>Total Ventas</h3>
+        <p>${{ kpis.total_ventas }}</p>
+    </div>
+
+    <div class="card-kpi">
+        <h3>Total Utilidad</h3>
+        <p>${{ kpis.total_utilidad }}</p>
+    </div>
+
+    <div class="card-kpi">
+        <h3>Ticket Promedio</h3>
+        <p>${{ kpis.ticket_promedio }}</p>
+    </div>
+
+    <div class="card-kpi">
+        <h3>Valor Inventario</h3>
+        <p>${{ valor_inventario }}</p>
+    </div>
+
+</div>
+
+<hr>
+
+<h3>Top 5 Productos Más Vendidos</h3>
+<ul class="lista-dashboard">
+    {% for p in top_vendidos %}
+    <li>{{ p.nombre }} - {{ p.total_vendido }} piezas</li>
+    {% endfor %}
+</ul>
+
+<h3>Top 5 Productos Más Rentables</h3>
+<ul class="lista-dashboard">
+    {% for p in top_rentables %}
+    <li>{{ p.nombre }} - ${{ p.utilidad_total }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Ventas por Día</h3>
+<ul class="lista-dashboard">
+    {% for v in ventas_por_dia %}
+    <li>{{ v.fecha }} - ${{ v.total_dia }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
