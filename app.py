@@ -3,14 +3,15 @@ Módulo de gestión de conexiones a base de datos.
 
 Proporciona funciones para conectar y consultar la base de datos de la aplicación.
 """
-
+import os
 from datetime import date
 
-import os
-from werkzeug.utils import secure_filename
-from database import get_connection
 from flask import Flask, render_template, request
 from flask import session, redirect, url_for
+
+from werkzeug.utils import secure_filename
+from database import get_connection
+
 
 app = Flask(__name__)
 
@@ -316,6 +317,7 @@ def dashboard():
         top_rentables=top_rentables,
         valor_inventario=inventario["valor_inventario"]
     )
+
 
 if __name__ == "__main__":
     app.run(debug=True)
