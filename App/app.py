@@ -49,7 +49,7 @@ def cliente():
 def catalogo():
     """Gestiona el catálogo de productos, permitiendo listar y agregar nuevos productos."""
     conn = get_connection()
-    cursor = cursor = conn.cursor(dictionary=True)
+    cursor = cursor = conn.cursor()
 
     if request.method == "POST":
         nombre = request.form["nombre"]
@@ -84,7 +84,7 @@ def catalogo():
 def ventas():
     """jbksdbbvkbdbfkjbkudbkbcdjbuvbdfbkdjfbuibdvfd."""
     conn = get_connection()
-    cursor = conn.cursor(dictionary=True)
+    cursor = conn.cursor()
 
     # Obtener productos
     cursor.execute("SELECT id, nombre, descripcion, precio FROM productos")
@@ -166,7 +166,7 @@ def compras():
     Gestiona las compras de productos, permitiendo registrar nuevas compras y listar las existentes.
     """
     conn = get_connection()
-    cursor = conn.cursor(dictionary=True)
+    cursor = conn.cursor()
 
     hoy = date.today()
 
@@ -209,7 +209,7 @@ def stock():
     Calcula y muestra el stock actual usando JOIN.
     """
     conn = get_connection()
-    cursor = conn.cursor(dictionary=True)
+    cursor = conn.cursor()
 
     cursor.execute("""
         SELECT 
@@ -236,7 +236,7 @@ def dashboard():
     Muestra el dashboard empresarial con KPIs, ventas por día, top productos vendidos y rentables.
     """
     conn = get_connection()
-    cursor = conn.cursor(dictionary=True)
+    cursor = conn.cursor()
 
     # ==============================
     # KPIs GENERALES
